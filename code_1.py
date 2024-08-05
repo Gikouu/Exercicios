@@ -1,7 +1,8 @@
 #Tamanho da matriz
 
 def dimensoes(matriz):
-    linhas = 0
-    colunas = 0
-    for i in range 
-    print()
+    linhas = len(matriz)
+    colunas = len(matriz[0])
+    
+    return print(linhas,"X",colunas, sep='')
+
