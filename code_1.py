@@ -60,3 +60,15 @@ def soma_lista(lista):
         lista = lista[1:]
         return soma + soma_lista(lista)
 
+#Separando números ímpares de listas
+
+def encontra_impares(lista):
+
+    if not lista:
+        return []
+    
+    impares_restantes = encontra_impares(lista[1:])
+    if lista[0] % 2 != 0:
+        return impares_restantes + [lista[0]]
+    else:
+        return impares_restantes
