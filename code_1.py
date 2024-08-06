@@ -47,3 +47,16 @@ def sao_multiplicaveis(m1, m2):
     
     else:
         return False
+
+#Somando listas com recursos recursivos
+
+def soma_lista(lista):
+    soma = 0
+    if len(lista) == 1:
+        soma += lista[0]
+        return soma
+    else:
+        soma += lista[0]
+        lista = lista[1:]
+        return soma + soma_lista(lista)
+
