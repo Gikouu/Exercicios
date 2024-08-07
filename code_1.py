@@ -72,3 +72,22 @@ def encontra_impares(lista):
         return impares_restantes + [lista[0]]
     else:
         return impares_restantes
+    
+#Música do elefante
+
+def incomodam(n):
+    if n <=0:
+        return ""
+    else:
+        return incomodam(n-1) + "incomodam "
+
+def elefantes(k):
+    if k<=1:
+        return ""
+    
+    elif k == 2:
+        return elefantes(k-1) + "Um elefante incomoda muita gente\n{} elefantes {}muito mais\n".format(k, incomodam(k))
+        
+    else:
+        return elefantes(k-1) + "{} elefantes incomodam muita gente\n{} elefantes {}muito mais\n".format(k-1,k,incomodam(k))
+elefantes(4)
