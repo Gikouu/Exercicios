@@ -90,4 +90,19 @@ def elefantes(k):
         
     else:
         return elefantes(k-1) + "{} elefantes incomodam muita gente\n{} elefantes {}muito mais\n".format(k-1,k,incomodam(k))
-elefantes(4)
+
+#Soma de Fibonacci
+
+def fibonacci(x:int):
+    if x < 2:
+        return x 
+    else:
+        return fibonacci(x-1) + fibonacci(x-2)
+    
+#Fatorial
+
+def fatorial(x:int):
+    if x <=1:
+        return 1
+    else:
+        return fatorial(x-1) * x
