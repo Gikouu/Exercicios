@@ -116,3 +116,14 @@ def maiusculas(frase:str):
             letrasM += str(palavra)
     
     return letrasM
+
+#Retorna o menor nome de uma lista de nomes
+
+def menor_nome(nomes:list):
+    menor = nomes[0]
+    for nome in nomes:
+        nome_c = nome.strip()
+        if len(nome_c) < len(menor):
+            menor = nome_c
+
+    return menor.capitalize()
