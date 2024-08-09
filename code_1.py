@@ -106,3 +106,13 @@ def fatorial(x:int):
         return 1
     else:
         return fatorial(x-1) * x
+
+#Retornas maiusculas
+
+def maiusculas(frase:str):
+    letrasM = ''
+    for palavra in frase:
+        if ord(palavra) >= 65 and ord(palavra) <= 90:
+            letrasM += str(palavra)
+    
+    return letrasM
