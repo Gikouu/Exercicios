@@ -127,3 +127,18 @@ def menor_nome(nomes:list):
             menor = nome_c
 
     return menor.capitalize()
+
+#Uma função que conta as vogais ou consoantes dependendo da opção escolhida
+
+def conta_letras(frase:str, contar:str="vogais"):
+    contador = 0
+    if contar == 'consoantes':
+        for letra in frase:
+            if letra != 'a' and letra != 'e' and letra != 'i' and letra != 'o' and letra != 'u' and letra != ' ':
+                contador += 1
+    else:
+        for letra in frase:
+            if letra == 'a' or letra == 'e' or letra == 'i' or letra == 'o' or letra == 'u':
+                contador += 1
+
+    return contador
