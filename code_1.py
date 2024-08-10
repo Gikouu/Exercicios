@@ -142,3 +142,15 @@ def conta_letras(frase:str, contar:str="vogais"):
                 contador += 1
 
     return contador
+
+#Função que retorna a menor palavra na ordem lexicográfica
+
+def primeiro_lex(lista:list[str]):
+    menor = lista[0]
+    for palavra in lista:
+        if palavra < menor:
+            menor = palavra
+
+    return menor
+
+primeiro_lex(['AAAAAA', 'b'])
