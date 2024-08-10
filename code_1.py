@@ -153,4 +153,3 @@ def primeiro_lex(lista:list[str]):
 
     return menor
 
-primeiro_lex(['AAAAAA', 'b'])
