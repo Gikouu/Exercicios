@@ -167,6 +167,7 @@ class Triangulo:
         return self.a + self.b + self.c
 
     def tipo_lado(self) -> str:
+
         if self.a == self.b and self.a == self.c:
             return 'equilátero'
         elif self.a != self.b and self.a != self.c and self.b != self.c:
@@ -174,3 +175,38 @@ class Triangulo:
         else:
             return 'isósceles'
         
+    def retangulo(self) -> bool:
+
+        if (self.a * self.a + self.b * self.b) == (self.c * self.c):
+            return True
+        else:
+            return False
+
+    def semelhantes(self, Triangulo):
+        lados = []
+        lados_2 = []
+        razao = []
+        check = True
+
+        lados_2.append(Triangulo.a)
+        lados_2.append(Triangulo.b)
+        lados_2.append(Triangulo.c)
+        lados.append(self.a)
+        lados.append(self.b)
+        lados.append(self.c)
+
+        for i in range(3):
+            elemento = lados[i] / lados_2[i]
+            razao.append(elemento)
+
+        for i in range(2):
+            if razao[i] == razao[i+1]:
+                check = True
+            else:
+                check = False
+        
+        if check == True:
+            return True
+        else:
+            return False
+    
