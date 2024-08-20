@@ -153,3 +153,24 @@ def primeiro_lex(lista:list[str]):
 
     return menor
 
+#Criando triângulo + perimetro + tipo
+
+class Triangulo:
+    def __init__(self , a , b , c) -> None:
+
+        self.a = a
+        self.b = b
+        self.c = c
+    
+    def perimetro(self) -> int:
+
+        return self.a + self.b + self.c
+
+    def tipo_lado(self) -> str:
+        if self.a == self.b and self.a == self.c:
+            return 'equilátero'
+        elif self.a != self.b and self.a != self.c and self.b != self.c:
+            return 'escaleno'
+        else:
+            return 'isósceles'
+        
