@@ -209,4 +209,31 @@ class Triangulo:
             return True
         else:
             return False
-    
+
+#Confere ordenação da lista
+
+def selecao_direta(lista):
+    fim = len(lista)
+    for i in range(fim - 1):
+        posicao_do_minimo = i
+        for j in range(i + 1, fim):
+            if lista[j] < lista[posicao_do_minimo]:
+                posicao_do_minimo = j
+        lista[i], lista[posicao_do_minimo] = lista[posicao_do_minimo], lista[i]
+    return lista
+
+def copia_lista(lista):
+    lista_copia = []
+    for i in range(len(lista)):
+        lista_copia.append(lista[i])
+    return lista_copia
+
+def ordenada(lista):
+    lista_normal = copia_lista(lista)
+    lista_ordenada = selecao_direta(lista)
+    for i in range(len(lista)):
+        if lista_normal[i] == lista_ordenada[i]:
+            pass
+        else:
+            return False
+    return True
