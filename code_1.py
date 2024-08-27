@@ -237,3 +237,23 @@ def ordenada(lista):
         else:
             return False
     return True
+
+#Busca sequencial
+
+def  busca(lista, elemento):
+
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return False
+
+#Gerador de listas com números aleatórios
+
+import random
+
+def lista_grande(n):
+    lista = []
+    for i in range(n):
+        numero_aleatorio = random.randint(1, 100)
+        lista.append(numero_aleatorio)
+    return lista
