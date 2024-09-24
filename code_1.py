@@ -257,3 +257,51 @@ def lista_grande(n):
         numero_aleatorio = random.randint(1, 100)
         lista.append(numero_aleatorio)
     return lista
+
+#Buscador binário
+
+def busca(lista, elemento):
+    primeiro = 0
+    ultimo = len(lista) - 1
+
+    while primeiro <= ultimo:
+
+        meio = (primeiro + ultimo)//2
+        if lista[meio] < elemento:
+            print(meio)
+            primeiro = meio +1
+        elif lista[meio] > elemento:
+            print(meio)
+            ultimo = meio - 1
+        elif lista[meio] == elemento:
+            print(meio)
+            return meio
+        
+    return False
+
+#Buscador bubblesort
+
+def bubble_sort(lista):
+
+    for i in range(len(lista)-1,0,-1):
+        for j in range(i):
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j]
+                print(lista)
+    return lista
+
+#Buscador insertion
+
+def insertion_sort(lista):
+    # Percorre todos os elementos da lista, começando pelo segundo elemento
+    for i in range(1, len(lista)):
+        key = lista[i]
+        j = i - 1
+        # Move os elementos da lista que são maiores que a chave para uma posição à frente
+        while j >= 0 and key < lista[j]:
+            lista[j + 1] = lista[j]
+            j -= 1
+        # Insere a chave na posição correta
+        lista[j + 1] = key
+    
+    return lista
