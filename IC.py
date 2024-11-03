@@ -17,32 +17,14 @@ def obter_arestas(arestas, ultimo_rotulo):
 
     return arestas_sep
 
-def gera_rotulo(origem, rotulo, not_rotulo):
-
-    for i in range(1,len(nos)):
-        if i == origem:
-            not_rotulo.append(nos[len(nos)-1])
-            pass
-        else:
-            not_rotulo.append(i)
-    
-    return rotulo, not_rotulo
-
 def Dijkstra():
 
-    rotulo = []
-    not_rotulo = []
     origem = int(input("Digite o nó de origem: "))
     destino = int(input("Digite o nó de destino: "))
-    distancia = 0
+    custo_total = 0
     predecessor = []
-    ultimo_rotulo = origem
-    rotulo.append(origem)
-
-    gera_rotulo(origem, rotulo, not_rotulo)
-
-    minimos = []
     custo_caminhos = []
+    ultimo_rotulo = origem
 
     while ultimo_rotulo != destino:
 
@@ -52,7 +34,7 @@ def Dijkstra():
 
         for i in range(0,len(caminhos)):
             
-            custo = min(caminhos[i][2], (distancia + caminhos[i][2]))
+            custo = min(caminhos[i][2], (custo_total + caminhos[i][2]))
             caminho = ultimo_rotulo, 
             if custo <= menor:
                 menor = custo
@@ -60,14 +42,14 @@ def Dijkstra():
                 caminho = ultimo_rotulo, nó
                 predecessor.append(caminho)
 
+        custo_total += menor
         ultimo_rotulo = nó
         custo_caminhos.append(menor)
 
+    print(f"O custo total do caminho foi {custo_total}, e seu caminho foi dado por {predecessor}")
 
-        
+    return custo_caminhos, predecessor, custo_total
 
-    return gera_rotulo, custo_caminhos, predecessor
-
-print(Dijkstra())
+Dijkstra()
 
 
