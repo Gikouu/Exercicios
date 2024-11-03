@@ -35,19 +35,39 @@ def Dijkstra():
     origem = int(input("Digite o nó de origem: "))
     destino = int(input("Digite o nó de destino: "))
     distancia = 0
-    predecessor = 0
+    predecessor = []
     ultimo_rotulo = origem
     rotulo.append(origem)
 
     gera_rotulo(origem, rotulo, not_rotulo)
 
     minimos = []
+    custo_caminhos = []
+
     while ultimo_rotulo != destino:
+
+        caminhos = obter_arestas(arestas, ultimo_rotulo)
+        menor = caminhos[0][2]
+        nó = caminhos[0][1]
+
+        for i in range(0,len(caminhos)):
+            
+            custo = min(caminhos[i][2], (distancia + caminhos[i][2]))
+            caminho = ultimo_rotulo, 
+            if custo <= menor:
+                menor = custo
+                nó = caminhos[i][1]
+                caminho = ultimo_rotulo, nó
+                predecessor.append(caminho)
+
+        ultimo_rotulo = nó
+        custo_caminhos.append(menor)
+
+
         
-        for j in not_rotulo:
-            x = min(distancia, distancia + arestas[ultimo_rotulo,j])
 
-    return gera_rotulo
+    return gera_rotulo, custo_caminhos, predecessor
 
-Dijkstra()
+print(Dijkstra())
+
 
