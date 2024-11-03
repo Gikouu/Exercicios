@@ -17,6 +17,20 @@ def obter_arestas(arestas, ultimo_rotulo):
 
     return arestas_sep
 
+def caminho_minimo(predecessor, origem, destino):
+
+    caminho_correto = []
+
+    while destino != origem:
+        for i in range(0,len(predecessor)):
+            if predecessor[i][1] == destino:
+                caminho_correto.append(predecessor[i])
+                destino = predecessor[i][0]
+
+
+    return caminho_correto
+
+
 def Dijkstra():
 
     origem = int(input("Digite o nó de origem: "))
@@ -45,11 +59,16 @@ def Dijkstra():
         custo_total += menor
         ultimo_rotulo = nó
         custo_caminhos.append(menor)
+    
+    caminho_correto = caminho_minimo(predecessor, origem, destino)
 
-    print(f"O custo total do caminho foi {custo_total}, e seu caminho foi dado por {predecessor}")
+    print(f"O custo total do caminho foi {custo_total}, e seu caminho foi dado por:"
+          f"{' -> '.join(str(i) for i in caminho_correto[::-1])}"
+    )
 
     return custo_caminhos, predecessor, custo_total
 
-Dijkstra()
+if __name__ ==  "__main__":
+    Dijkstra()
 
 
